@@ -1,9 +1,11 @@
-setup = function () {
+setup = () => {
   createCanvas(800, 800);
+  background(255);
+  angleMode(DEGREES);
+  noLoop();
 };
 
-function draw() {
-  background(255);
+draw = () => {
   const num = 7;
 
   // Arc
@@ -13,18 +15,45 @@ function draw() {
   let h = 80;
   let angle = 360 / num;
 
-  angleMode(DEGREES);
-
+  fill(randomColor());
   for (let i = 1; i < num + 1; i++) {
     arc(x * i, y, w, h, 0, angle * i, PIE);
   }
 
-  // ellipse();
-  // circle();
+  // Ellipse|
+  x = 100;
+  y = 200;
+
+  fill(randomColor());
+  for (let i = 1; i < num + 1; i++) {
+    ellipse(x * i, y, 50, (50 / num) * i);
+  }
+
+  // Circle
+  x = 100;
+  y = 300;
+
+  fill(randomColor());
+  for (let i = 1; i < num + 1; i++) {
+    circle(x * i, y, (50 / num) * i);
+  }
+
   // line();
   // point();
   // quad();
   // rect();
   // square();
   // triangle();
-}
+
+  save("001.jpg");
+};
+
+randomColor = () => {
+  let colors = [];
+
+  for (let i = 0; i < 3; i++) {
+    colors[i] = Math.floor(Math.random() * 255 + 1);
+  }
+
+  return color(colors[0], colors[1], colors[2]);
+};
