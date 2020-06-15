@@ -38,7 +38,17 @@ draw = () => {
     circle(x * i, y, (50 / num) * i);
   }
 
-  // line();
+  // Line
+  x1 = 100;
+  y1 = 400;
+  x2 = 100;
+  y2 = 450;
+
+  for (let i = 1; i < num + 1; i++) {
+    stroke(Math.floor(Math.random() * 255 + 1));
+    line(x1 * i, y1, x1 + 50 * i, y2);
+  }
+
   // point();
   // quad();
   // rect();
