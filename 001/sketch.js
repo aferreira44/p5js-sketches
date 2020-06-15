@@ -52,10 +52,10 @@ draw = () => {
   // Point
   x = 100;
   y = 600;
-  stroke(randomColor()); // Change the color
-  strokeWeight(25); // Make the points 10 pixels in size
 
   for (let i = 1; i < num + 1; i++) {
+    stroke(randomColor()); // Change the color
+    strokeWeight(Math.floor(Math.random() * 25 + 1)); // Make the points 10 pixels in size
     point(x * i, y);
   }
 
