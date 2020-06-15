@@ -42,14 +42,23 @@ draw = () => {
   x1 = 100;
   y1 = 400;
   x2 = 100;
-  y2 = 450;
+  y2 = 500;
 
   for (let i = 1; i < num + 1; i++) {
     stroke(Math.floor(Math.random() * 255 + 1));
     line(x1 * i, y1, x1 + 50 * i, y2);
   }
 
-  // point();
+  // Point
+  x = 100;
+  y = 600;
+  stroke(randomColor()); // Change the color
+  strokeWeight(25); // Make the points 10 pixels in size
+
+  for (let i = 1; i < num + 1; i++) {
+    point(x * i, y);
+  }
+
   // quad();
   // rect();
   // square();
