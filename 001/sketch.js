@@ -45,7 +45,7 @@ draw = () => {
   y2 = 500;
 
   for (let i = 1; i < num + 1; i++) {
-    stroke(Math.floor(Math.random() * 255 + 1));
+    stroke(randomNumber(255));
     line(x1 * i, y1, x1 + 50 * i, y2);
   }
 
@@ -55,7 +55,7 @@ draw = () => {
 
   for (let i = 1; i < num + 1; i++) {
     stroke(randomColor()); // Change the color
-    strokeWeight(Math.floor(Math.random() * 25 + 1)); // Make the points 10 pixels in size
+    strokeWeight(randomNumber(50)); // Make the points 10 pixels in size
     point(x * i, y);
   }
 
@@ -67,11 +67,15 @@ draw = () => {
   save("001.jpg");
 };
 
+randomNumber = (n) => {
+  return Math.floor(Math.random() * n + 1);
+};
+
 randomColor = () => {
   let colors = [];
 
   for (let i = 0; i < 3; i++) {
-    colors[i] = Math.floor(Math.random() * 255 + 1);
+    colors[i] = randomNumber(255);
   }
 
   return color(colors[0], colors[1], colors[2]);
