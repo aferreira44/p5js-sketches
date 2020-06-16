@@ -1,5 +1,5 @@
 setup = () => {
-  createCanvas(800, 800);
+  createCanvas(1000, 1000);
   background(255);
   angleMode(DEGREES);
   noLoop();
