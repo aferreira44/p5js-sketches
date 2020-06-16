@@ -59,8 +59,17 @@ draw = () => {
     point(x * i, y);
   }
 
-  // quad();
-  // rect();
+  // Rect
+
+  x = 100;
+  y = 800;
+  strokeWeight(0);
+
+  for (let i = 1; i < num + 1; i++) {
+    fill(randomColor());
+    rect(x * i, y, randomNumber(50));
+  }
+
   // square();
   // triangle();
 
