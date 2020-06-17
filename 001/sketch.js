@@ -1,5 +1,5 @@
 setup = () => {
-  createCanvas(1000, 1000);
+  createCanvas(2000, 2000);
   background(255);
   angleMode(DEGREES);
   noLoop();
@@ -70,7 +70,16 @@ draw = () => {
     rect(x * i, y, randomNumber(50));
   }
 
-  // square();
+  // Square
+
+  x = 100;
+  y = 900;
+
+  for (let i = 1; i < num + 1; i++) {
+    fill(randomColor());
+    square(x * i, y, randomNumber(50));
+  }
+
   // triangle();
 
   save("001.jpg");
